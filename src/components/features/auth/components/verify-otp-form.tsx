@@ -11,7 +11,7 @@ import { DialogDescription, DialogHeader, DialogTitle, DialogFooter } from "@/co
 import { Button } from "@/components/ui/button";
 import useVerifyOtp from "@/hooks/auth/use-verify-otp";
 
-export default function VerifyOtpForm({ setAuthState }: AuthFormProps) {
+export default function VerifyOtpForm() {
   // Translation
   const t = useTranslations();
 

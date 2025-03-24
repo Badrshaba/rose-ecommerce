@@ -1,6 +1,5 @@
-import { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils/cn";
-import { useLocale } from "next-intl";
+
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 
@@ -9,8 +8,6 @@ declare type TestimonailsCardProps = {
 };
 
 export default function TestimonailsCard({ feedback }: TestimonailsCardProps) {
-  const locale = useLocale() as Locale;
-
   return (
     <>
       <div className=" bg-white aspect-square rounded-tl-[50px] rounded-tr-[100px] rounded-br-[100px] rounded-bl-[100px]  p-6 ">

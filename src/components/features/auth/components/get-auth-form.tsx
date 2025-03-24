@@ -43,9 +43,9 @@ export function GetAuthForm({ authState, setAuthState }: GetAuthFormProps) {
     case "forgot-password":
       return <ForgotPasswordForm setAuthState={setAuthState} />;
     case "verify-otp":
-      return <VerifyOtpForm setAuthState={setAuthState} />;
+      return <VerifyOtpForm />;
     case "set-password":
-      return <SetPasswordForm setAuthState={setAuthState} />;
+      return <SetPasswordForm />;
     default:
       return <div className="text-red-500 text-lg text-center">{t("form-not-found")}</div>;
   }

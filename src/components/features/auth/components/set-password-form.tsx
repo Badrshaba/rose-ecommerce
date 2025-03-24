@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { DialogDescription, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 
-export default function SetPasswordForm({ setAuthState }: AuthFormProps) {
+export default function SetPasswordForm() {
   // Translation
   const t = useTranslations();
 
