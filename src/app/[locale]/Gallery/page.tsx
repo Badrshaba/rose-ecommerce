@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Card, CardContent } from "../../../components/ui/card";
 
 export default function Gallery() {
@@ -15,7 +16,7 @@ export default function Gallery() {
         <div className="text-center space-y-2">
           <h2 className="text-[#F82BA9] uppercase tracking-wide text-sm font-bold">Our Gallery</h2>
           <h3 className="text-3xl font-bold text-[#160E4B]  w-fit text-center m-auto">
-            <span className="border-b-rose-400 border-b-4">Let's Check</span> Our Photo Gallery
+            <span className="border-b-rose-400 border-b-4">Let&apos;s Check</span> Our Photo Gallery
           </h3>
         </div>
 
