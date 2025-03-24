@@ -6,7 +6,7 @@ export default function Categories({ payload }: { payload: CategoriesResponse })
     <Carousel className="mt-8 container">
       <CarouselContent>
         {payload.categories.map((category) => (
-          <CarouselItem className="xl:basis-1/5 md:basis-2/5 basis-3/5 " key={category._id}>
+          <CarouselItem className="xl:basis-1/5 md:basis-2/5 basis-3/5  " key={category._id}>
             <CategoryCard category={category} />
           </CarouselItem>
         ))}

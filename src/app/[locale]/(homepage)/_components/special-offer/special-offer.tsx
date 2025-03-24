@@ -93,7 +93,7 @@ export default function SpecialOffer() {
                   </p>
 
                   {/* Main text */}
-                  <h2 className="text-custom-blue-900 font-bold text-5xl mb-5">
+                  <h2 className="text-custom-blue-900 font-bold sm:text-5xl text-3xl mb-5">
                     {t("choose-perfect")} <br />
                     <span className="text-custom-rose-900">{t("gifts")}</span> {t("from-us")}
                   </h2>
@@ -102,7 +102,7 @@ export default function SpecialOffer() {
                   <p className="mb-5 max-w-96">{t("special-offer-description")}</p>
 
                   {/* Shop button */}
-                  <Button className="bg-custom-rose-900 self-start  font-medium text-base text-white rounded-md hover:bg-custom-rose-800 ps-5  py-[10px] ">
+                  <Button className="bg-custom-rose-900 self-start mb-8 sm:mb-0  font-medium text-base text-white rounded-md hover:bg-custom-rose-800 ps-5  py-[10px] ">
                     {t("shop-now")}
                     <Arrow />
                   </Button>

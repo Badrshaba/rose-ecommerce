@@ -24,7 +24,7 @@ export default function CarouselComponent({ bestProducts }: CarouselComponentPro
         {bestProducts?.map((product: Product) => (
           <CarouselItem
             key={product._id}
-            className=" rounded-tl-[50px] rounded-tr-[100px] rounded-bl-[100px] rounded-br-[100px] bg-white rounded-3xl  mr-1 px-2 !w-[15rem] lg:w-[20rem] "
+            className=" rounded-tl-[50px] rounded-tr-[100px] rounded-bl-[100px] rounded-br-[100px] bg-white rounded-3xl  mr-1 px-2 !w-[15rem] lg:w-[20rem] sm:basis-3/6 md:basis-6/12 lg:basis-4/12 basis-full"
           >
             <ProductCard product={product} />
           </CarouselItem>

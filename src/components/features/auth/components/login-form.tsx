@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 
-export default function LoginForm({ setAuthState }: AuthFormProps) {
+export default function LoginForm() {
   // Translations
   const t = useTranslations();
 
@@ -94,7 +94,6 @@ export default function LoginForm({ setAuthState }: AuthFormProps) {
 
               {/* Create Account Button */}
               <button
-                onClick={() => setAuthState("register")}
                 type="button"
                 className="text-custom-rose-900 text-sm font-semibold border-b-2 border-custom-rose-900 ms-1"
               >
@@ -105,7 +104,6 @@ export default function LoginForm({ setAuthState }: AuthFormProps) {
             {/* Forgot Password Button */}
             <button
               type="button"
-              onClick={() => setAuthState("forgot-password")}
               className="text-custom-rose-900 text-sm font-semibold border-b-2 border-custom-rose-900 ms-1"
             >
               {t("forget-password")}

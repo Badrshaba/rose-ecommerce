@@ -83,12 +83,12 @@ body {
 @layer components {
   /* Form input styles */
   .input-custom {
-    @apply rounded-[20px] border-none p-2 focus-visible:ring-2 
+    @apply rounded-[20px] border-none p-2 px-4 h-14 focus-visible:ring-2 
     focus-visible:ring-custom-rose-900 focus:outline-none !important;
   }
   /* Submit button styles */
   .button-submit {
-    @apply bg-custom-rose-900 text-white leading-[50px] px-4 rounded-[30px];
+    @apply bg-custom-rose-900 text-white leading-[50px] px-4 rounded-[30px] !important;
     /* @apply bg-custom-rose-900 text-white leading-[50px] px-4 rounded-full; */
   }
 }

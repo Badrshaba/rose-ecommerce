@@ -29,7 +29,7 @@ export default function PopularProductsNav({ categories }: PopularProductsNavPro
   }
 
   return (
-    <div className="container mx-auto t-20 mb-10 pt-20 flex items-center justify-between ">
+    <div className="container mx-auto t-20 mb-10 pt-20 flex flex-wrap gap-2 items-center justify-between ">
       {/* Header */}
       <h2 className="capitalize after:absolute after:w-[53px] after:h-[2px] after:bg-custom-rose-900 rtl:after:right-0 after:left-0 after:top-full  before:content-[''] before:absolute before:bottom-0 rtl:before:right-0 before:left-0 before:w-[136px] before:h-[17px] before:bg-[#FEEDF7] before:z-[-1] before:rounded-e-lg font-bold text-cutom-blue text-lg sm:text-xl md:text-3xl relative">
         {t("propular-items")}

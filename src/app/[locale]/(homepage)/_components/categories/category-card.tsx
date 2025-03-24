@@ -1,4 +1,3 @@
-import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -7,10 +6,7 @@ export default function CategoryCard({ category }: { category: Category }) {
   const t = useTranslations();
 
   return (
-    <Link
-      href={`/categories/${category._id}`}
-      className="bg-dark  bg-custom-rose-25 flex rounded-2xl p-4 gap-4 cursor-grab"
-    >
+    <div className="bg-dark  bg-custom-rose-25 flex rounded-2xl p-4 gap-4 cursor-grab">
       {/* Image */}
       <div className="bg-custom-rose-900 p-4 rounded-full flex items-center justify-center">
         <Image
@@ -32,6 +28,6 @@ export default function CategoryCard({ category }: { category: Category }) {
           {category.productsCount} {t("items")}
         </p>
       </div>
-    </Link>
+    </div>
   );
 }

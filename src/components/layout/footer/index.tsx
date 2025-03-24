@@ -22,7 +22,7 @@ export default function Footer() {
       {/* Content */}
       <div className="relative z-10">
         {/* Navigation */}
-        <div className="flex justify-center md:gap-14 lg:gap-20 gap-5 mx-auto md:font-bold font-semibold md:text-base text-sm text-custom-blue-900">
+        <div className="flex justify-center md:gap-14 lg:gap-20 gap-5 mx-auto md:font-bold font-semibold md:text-base text-[0.6rem] sm:text-sm text-custom-blue-900">
           <Link href={"/"}> {t("about-us")}</Link>
           <Link href={"/"}> {t("store-location")}</Link>
           <Link href={"/"}> {t("contact")}</Link>
@@ -49,7 +49,8 @@ export default function Footer() {
           <Input
             type="email"
             placeholder={t("enter-your-email")}
-            className="w-[300px] md:w-[400px] md:h-[45px] h-[35px] px-5 py-2 border-0  rounded-full focus:outline-0"
+            className="w-[300px] md:w-[400px] md:h-[45px] h-[35px] px-5 py-2 border-0  rounded-full focus-visible:ring-2 
+    focus-visible:ring-custom-rose-900 focus:outline-none"
           />
 
           {/* Button */}

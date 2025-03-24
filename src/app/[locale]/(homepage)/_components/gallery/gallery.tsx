@@ -34,7 +34,7 @@ export default function Gallery() {
       </div>
 
       {/* Photos sections */}
-      <div className="grid  grid-cols-6 gap-4">
+      <div className="grid md:px-4  grid-cols-6 gap-4">
         {/* Galley images photo no 4 will take to cols */}
         {images.map((image, index) => (
           <div

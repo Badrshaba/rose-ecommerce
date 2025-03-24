@@ -37,7 +37,7 @@ export function GetAuthForm({ authState, setAuthState }: GetAuthFormProps) {
   // Switch case to render the corresponding form
   switch (authState) {
     case "login":
-      return <LoginForm setAuthState={setAuthState} />;
+      return <LoginForm />;
     case "register":
       return <RegisterForm setAuthState={setAuthState} />;
     case "forgot-password":

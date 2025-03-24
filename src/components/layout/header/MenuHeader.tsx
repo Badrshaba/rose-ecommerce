@@ -1,13 +1,10 @@
 "use client";
-import { Link } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useState } from "react";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
+import Navigation from "./Navigation";
 
 export default function MenuHeader() {
-  // Translation
-  const t = useTranslations();
   // states
   const [menuOpen, setMenuOpen] = useState(true);
   return (
@@ -16,7 +13,7 @@ export default function MenuHeader() {
       <IoIosMenu
         fontSize={28}
         fontWeight={700}
-        className="text-rose-500 lg:hidden cursor-pointer "
+        className="text-rose-500 md:hidden cursor-pointer "
         onClick={() => setMenuOpen(!menuOpen)}
       />
       {/* Navigation */}
@@ -33,12 +30,7 @@ export default function MenuHeader() {
             className="  cursor-pointer"
           />
         </div>
-        <Link className="text-rose-500" href={"/"}>
-          {t("home")}
-        </Link>
-        <Link href={"/"}> {t("all-category")}</Link>
-        <Link href={"/"}> {t("about")}</Link>
-        <Link href={"/"}> {t("contact")}</Link>
+        <Navigation col />
       </div>
       <div
         className={`${menuOpen && "hidden"}  fixed !z-30 top-0 left-0 w-full h-[110vh] bg-black opacity-50 transition delay-300 duration-300 ease-in-out `}

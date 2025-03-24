@@ -13,9 +13,9 @@ export default function AboutUsHeaderPage() {
       {/* About-us section images */}
       <div className="about-us-header   flex gap-x-20 gap-5 flex-wrap justify-center items-center w-full ">
         {/* Images */}
-        <div className=" flex  gap-x-2 shrink md:w-[33rem] w-[29rem]">
+        <div className=" flex  gap-x-2 shrink md:w-[33rem] sm:w-[29rem] w-[20rem]">
           {/* Image 1 */}
-          <div className="rtl:me-7 before:absolute before:md:w-[268px] before:w-[220px] before:md:h-[363px] before:h-[300px] before:bg-transparent before:border-[4px] before:border-custom-rose-900  before:bottom-0 rtl:before:-right-5 before:-left-5 rtl:before:rounded-tr-[50px] before:rounded-tr-[120px] before:rounded-tl-[50px] rtl:before:rounded-br-[120px] before:rounded-br-[120px] before:rounded-bl-[120px] before:rotate-[3.09deg] rtl:before:rotate-[-3.09deg] relative ms-6 mt-6 md:w-[302px] w-[250px] h-[300px] md:h-[344px]">
+          <div className="rtl:me-7 before:absolute before:w-[180px] before:h-[250px] before:md:w-[268px] before:sm:w-[220px] before:md:h-[363px] before:sm:h-[300px] before:bg-transparent before:border-[4px] before:border-custom-rose-900  before:bottom-0 rtl:before:-right-5 before:-left-5 rtl:before:rounded-tr-[50px] before:rounded-tr-[120px] before:rounded-tl-[50px] rtl:before:rounded-br-[120px] before:rounded-br-[120px] before:rounded-bl-[120px] before:rotate-[3.09deg] rtl:before:rotate-[-3.09deg] relative ms-6 mt-6 md:w-[302px] w-[180px] h-[250px] sm:w-[250px] sm:h-[300px] md:h-[344px]">
             <Image
               className="object-cover w-full rtl:rounded-tr-[50px] rounded-tr-[120px] rounded-tl-[50px] rtl:rounded-tl-[120px]  rounded-br-[120px] rounded-bl-[120px]"
               src={"/assets/images/about-us/1.png"}
@@ -27,7 +27,7 @@ export default function AboutUsHeaderPage() {
 
           {/* Image 2 & 3 */}
           <div className="my-4">
-            <div className="relative mb-2 md:w-[193px] w-[150px] h-[150px] md:h-[193px]">
+            <div className="relative mb-2 md:w-[193px] sm:w-[150px] w-[120px] h-[120px] sm:h-[150px] md:h-[193px]">
               <Image
                 className="object-cover rounded-full"
                 src={"/assets/images/about-us/2.png"}
@@ -38,7 +38,7 @@ export default function AboutUsHeaderPage() {
             </div>
 
             {/* Image 3 */}
-            <div className="relative md:w-[193px] w-[150px] h-[150px] md:h-[193px]">
+            <div className="relative md:w-[193px] sm:w-[150px] w-[120px] h-[120px] sm:h-[150px] md:h-[193px]">
               <Image
                 src={"/assets/images/about-us/3.png"}
                 className="object-cover rtl:rounded-tr-[50px] rounded-tr-[100px] rounded-tl-[50px] rtl:rounded-tl-[100px]  rounded-br-[100px] rtl:rounded-br-[50px] rounded-bl-[50px] rtl:rounded-bl-[100px]"
