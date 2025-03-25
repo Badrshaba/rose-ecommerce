@@ -24,7 +24,7 @@ export default async function Header() {
       </div>
 
       {/* Actions */}
-      <div className="flex sm:gap-5 gap-2 items-center">
+      <div className="flex gap-5  items-center">
         {/* Login Button: Only show if user is not logged in */}
         {!session?.user && (
           <div className="flex items-center">

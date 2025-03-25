@@ -27,7 +27,7 @@ export default function ProductCard({ product }: { product: Product }) {
         {/* 'New'  lable */}
         {daysDiff < 7 && (
           <>
-            <div className="absolute rtl:text-sm font-roboto font-medium text-xs leading-5 tracking-[1px] z-50 top-2 right-2 bg-custom-rose-900  text-white px-4 py-1 rounded-full">
+            <div className="absolute rtl:text-sm font-roboto font-medium text-xs leading-5 tracking-[1px] z-[9] top-2 right-2 bg-custom-rose-900  text-white px-4 py-1 rounded-full">
               {t("new")}
             </div>
           </>
@@ -36,7 +36,7 @@ export default function ProductCard({ product }: { product: Product }) {
         {/* 'Out of stock' lable */}
         {productQuantity === 0 && (
           <>
-            <div className="absolute font-roboto font-medium text-xs leading-5 tracking-[1px] z-50 top-2 right-2 bg-custom-red  text-white px-2 py-1 rounded-full">
+            <div className="absolute font-roboto font-medium text-xs leading-5 tracking-[1px] z-[9] top-2 right-2 bg-custom-red  text-white px-2 py-1 rounded-full">
               {t("out-of-stock")}
             </div>
           </>
@@ -52,7 +52,7 @@ export default function ProductCard({ product }: { product: Product }) {
         />
 
         {/* The heart and eye icons who appeare after hover  */}
-        <div className="absolute inset-0 bg-custom-rose-900 flex items-center justify-center gap-10 duration-300 z-50 bg-opacity-70 opacity-0 transition-all group-hover:opacity-100">
+        <div className="absolute inset-0 bg-custom-rose-900 flex items-center justify-center gap-10 duration-300 z-[9] bg-opacity-70 opacity-0 transition-all group-hover:opacity-100">
           <TbEye className="w-10 h-10 text-white   cursor-pointer  z-10 bg-custom-rose-900 rounded-full p-2" />
           <TbHeart className="w-10 h-10 text-white cursor-pointer z-10 bg-custom-rose-900 rounded-full p-2" />
         </div>

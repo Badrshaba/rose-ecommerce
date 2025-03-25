@@ -14,11 +14,11 @@ export default function Navigation({ col }: { col?: boolean }) {
       <Link className={pathname === "/" ? "text-rose-500" : ""} href={"/"}>
         {t("home")}
       </Link>
-      <Link className={pathname === "/all-category" ? "text-rose-500" : ""} href={"/"}>
+      <Link className={pathname === "/all-products" ? "text-rose-500" : ""} href={"/all-products"}>
         {" "}
-        {t("all-category")}
+        {t("all-products")}
       </Link>
-      <Link className={pathname === "/about" ? "text-rose-500" : ""} href={"/"}>
+      <Link className={pathname === "/about" ? "text-rose-500" : ""} href={"/about"}>
         {" "}
         {t("about")}
       </Link>

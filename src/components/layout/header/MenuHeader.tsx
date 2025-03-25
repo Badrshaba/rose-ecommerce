@@ -18,7 +18,7 @@ export default function MenuHeader() {
       />
       {/* Navigation */}
       <div
-        className={`flex gap-5 text-custom-blue-900 font-medium rtl:font-semibold text-base fixed bg-white top-0 left-0 w-1/2 h-50 flex-col p-6 justify-center z-40 ${menuOpen && "hidden"} transition delay-300 duration-300 ease-in-out`}
+        className={`flex gap-5 text-custom-blue-900 font-medium rtl:font-semibold text-base fixed bg-white top-0 left-0 w-1/2 h-50 flex-col p-6 justify-center !z-[100] ${menuOpen && "hidden"} transition delay-300 duration-300 ease-in-out`}
       >
         <div className="flex justify-between items-center">
           {/* Logo */}

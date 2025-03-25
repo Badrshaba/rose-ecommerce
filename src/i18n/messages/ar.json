@@ -160,5 +160,7 @@
   "recover-password": "استعادة كلمة المرور",
   "invalid-validation-code": "رمز التحقق غير صالح.",
   "verify-code": "التحقق من الكود",
-  "otp-verified-successfully": "تم التحقق من الكود بنجاح"
+  "otp-verified-successfully": "تم التحقق من الكود بنجاح",
+  "all-products": "جميع المنتجات",
+  "contact-us": "اتصل بنا"
 }

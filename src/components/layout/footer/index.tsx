@@ -44,7 +44,7 @@ export default function Footer() {
         </p>
 
         {/* Field */}
-        <div className="flex justify-center items-center mt-5 w-fit mx-auto relative ">
+        <div className="flex justify-center items-center mt-5 w-fit mx-auto relative  ">
           {/* Input */}
           <Input
             type="email"

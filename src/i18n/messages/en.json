@@ -156,5 +156,8 @@
   "recover-password": "Recover Password",
   "invalid-validation-code": "Invalid validation code",
   "verify-code": "Verify Code",
-  "otp-verified-successfully": "OTP verified successfully"
+  "otp-verified-successfully": "OTP verified successfully",
+  "all-products": "All Products",
+  "contact-us": "Contact Us",
+  "call-anytime": "Call Anytime"
 }
