@@ -10,7 +10,6 @@ import PopularProducts from "./_components/popular-products";
 import Testimonails from "./_components/testimonials/testimonials";
 import Gallery from "./_components/gallery/gallery";
 import Companies from "./_components/trusted-companies/companies";
-
 export default async function Page({ searchParams }: RouteProps) {
   // Variables
   const payload = await getCategories();

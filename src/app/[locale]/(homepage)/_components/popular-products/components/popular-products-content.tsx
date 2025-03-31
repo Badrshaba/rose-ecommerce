@@ -18,7 +18,7 @@ export default async function PopularProductsContent({
   const products = await getPopularProducts(query);
 
   return (
-    <div className="flex flex-wrap justify-center items-center">
+    <div className="grid grid-cols-12 gap-5 justify-center items-center">
       {/* No products */}
       {products?.length === 0 && (
         <div className="w-full text-center min-h-56 flex items-center justify-center">
@@ -28,7 +28,10 @@ export default async function PopularProductsContent({
 
       {/* Products list */}
       {products?.map((product: Product) => (
-        <div key={product?._id} className="w-[15rem] lg:w-[20rem] px-4 mb-6">
+        <div
+          key={product?._id}
+          className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-3  px-4 mb-6"
+        >
           <ProductCard product={product} />
         </div>
       ))}

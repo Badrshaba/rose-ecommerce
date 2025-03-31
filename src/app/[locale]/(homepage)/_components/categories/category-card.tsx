@@ -6,7 +6,7 @@ export default function CategoryCard({ category }: { category: Category }) {
   const t = useTranslations();
 
   return (
-    <div className="bg-dark  bg-custom-rose-25 flex rounded-2xl p-4 gap-4 cursor-grab">
+    <div className="bg-dark flex-col items-center justify-center md:flex-row md:justify-start  bg-custom-rose-25 flex rounded-2xl p-4 gap-4 cursor-grab">
       {/* Image */}
       <div className="bg-custom-rose-900 p-4 rounded-full flex items-center justify-center">
         <Image

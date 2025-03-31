@@ -2,6 +2,13 @@
 
 import { Button } from "@/components/ui/button";
 import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
   Select,
   SelectContent,
   SelectItem,
@@ -19,6 +26,7 @@ import { Label } from "@/components/ui/label";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { useState } from "react";
+import { DialogDescription } from "@radix-ui/react-dialog";
 
 export default function Register({ setAuthState }: AuthFormProps) {
   //   Traslation
@@ -122,6 +130,27 @@ export default function Register({ setAuthState }: AuthFormProps) {
   };
 
   return (
+    // <Dialog>
+    //   {/* Intiate dialog */}
+    //   <DialogTrigger asChild>
+    //     <Button
+    //       className="bg-custom-rose-900 text-white w-20 h-12 rounded-full py-2 px-5 drop-shadow-lg hover:bg-custom-rose-800 hover:text-white"
+    //       variant="outline"
+    //     >
+    //       {/* Login button*/}
+    //       {t("login")}
+    //     </Button>
+    //   </DialogTrigger>
+
+    //   {/* Dialoge content and form */}
+    //   <DialogContent className="max-h-[calc(100vh-50px)] overflow-auto sm:max-w-[608px] rounded-3xl p-10 ">
+    //     <DialogHeader>
+    //       {/* Dialog titile */}
+    //       <DialogTitle className="sr-only">{t("create-an-account")}</DialogTitle>
+
+    //       {/* Dialog description */}
+    //       <DialogDescription className="sr-only">{t("fill-register-form")}</DialogDescription>
+    //     </DialogHeader>
     <div>
       {/* Register form */}
       <Form {...form}>
@@ -140,7 +169,7 @@ export default function Register({ setAuthState }: AuthFormProps) {
 
                 {/* Input */}
                 <Input
-                  className="input-custom font-normal shadow-custom-input"
+                  className="auth-input"
                   {...field}
                   placeholder={t("first-name-placeholder")}
                   autoComplete="given-name"
@@ -160,7 +189,7 @@ export default function Register({ setAuthState }: AuthFormProps) {
                 <Label className="sr-only">{t("last-name-placeholder")}</Label>
                 {/* Input */}
                 <Input
-                  className="input-custom font-normal shadow-custom-input"
+                  className="auth-input"
                   {...field}
                   placeholder={t("last-name-placeholder")}
                   autoComplete="family-name"
@@ -181,7 +210,7 @@ export default function Register({ setAuthState }: AuthFormProps) {
 
                 {/* Input */}
                 <Input
-                  className="input-custom font-normal shadow-custom-input"
+                  className="auth-input"
                   {...field}
                   placeholder={t("phone-number-placeholder")}
                   autoComplete="tel-national"
@@ -204,7 +233,7 @@ export default function Register({ setAuthState }: AuthFormProps) {
                 {/* Input */}
                 <Input
                   type="email"
-                  className="input-custom font-normal shadow-custom-input"
+                  className="auth-input"
                   {...field}
                   placeholder={t("email-placeholder")}
                   autoComplete="email"
@@ -226,10 +255,10 @@ export default function Register({ setAuthState }: AuthFormProps) {
                 <Label className="sr-only">{t("password-label")}</Label>
 
                 {/* Input */}
-                <div className="relative">
+                <div className="flex items-center h-max-md:h-[35px] h-[50px] rounded-full shadow-auth-forms-input focus-within:ring-custom-rose-900 focus-within:ring-1 focus-within:ring-offset-0">
                   <Input
                     type={passwordVisibility.password ? "text" : "password"}
-                    className="input-custom font-normal shadow-custom-input"
+                    className="h-full rounded-full border-none focus-visible:ring-0 focus-visible:ring-offset-0"
                     {...field}
                     placeholder={t("password-placeholder")}
                     autoComplete="new-password"
@@ -241,12 +270,12 @@ export default function Register({ setAuthState }: AuthFormProps) {
                         passwordVisibility.password ? t("hide-password") : t("show-password")
                       }
                       onClick={() => handleShowPassword("password")}
-                      className="text-2xl mx-3 cursor-pointer absolute right-0 top-[15px]"
+                      className="text-2xl mx-3 cursor-pointer"
                     />
                   ) : (
                     <FaRegEyeSlash
                       onClick={() => handleShowPassword("password")}
-                      className="text-2xl mx-3 cursor-pointer absolute right-0 top-[15px]"
+                      className="text-2xl mx-3 cursor-pointer"
                     />
                   )}
                 </div>
@@ -262,10 +291,10 @@ export default function Register({ setAuthState }: AuthFormProps) {
               <FormItem>
                 {/* Label */}
                 <Label className="sr-only">{t("confirm-password-label")}</Label>
-                <div className="relative">
+                <div className="flex items-center h-max-md:h-[35px] h-[50px] rounded-full shadow-auth-forms-input focus-within:ring-custom-rose-900 focus-within:ring-1 focus-within:ring-offset-0">
                   <Input
                     type={passwordVisibility.rePassword ? "text" : "password"}
-                    className="input-custom font-normal shadow-custom-input"
+                    className="h-full rounded-full border-none focus-visible:ring-0 focus-visible:ring-offset-0"
                     {...field}
                     placeholder={t("confirm-password-placeholder")}
                     autoComplete="new-password"
@@ -279,12 +308,12 @@ export default function Register({ setAuthState }: AuthFormProps) {
                           : t("show-password-conformation")
                       }
                       onClick={() => handleShowPassword("rePassword")}
-                      className="text-2xl mx-3 cursor-pointer absolute right-0 top-[15px]"
+                      className="text-2xl mx-3 cursor-pointer"
                     />
                   ) : (
                     <FaRegEyeSlash
                       onClick={() => handleShowPassword("rePassword")}
-                      className="text-2xl mx-3 cursor-pointer absolute right-0 top-[15px]"
+                      className="text-2xl mx-3 cursor-pointer"
                     />
                   )}
                 </div>
@@ -327,7 +356,7 @@ export default function Register({ setAuthState }: AuthFormProps) {
           <p className="text-center text-custom-black h-max-md:py-4 py-8 font-inter text-sm tracking-[0]">
             {t.rich("already-have-an-account", {
               button: (v) => (
-                <button onClick={() => setAuthState("login")} className="text-custom-rose-900  ">
+                <button onClick={() => setAuthState("login")} className="text-custom-rose-900">
                   {v}
                 </button>
               ),
@@ -335,7 +364,7 @@ export default function Register({ setAuthState }: AuthFormProps) {
           </p>
           {/* Submit */}
           <Button
-            className="button-submit  flex items-center justify-center w-full text-base h-[52px] font-medium mb-5"
+            className="block w-full h-max-md:h-10 h-12 bg-custom-rose-900 text-white rounded-full hover:bg-custom-rose-800 font-inter h-max-md:mb-2 mb-4"
             type="submit"
             disabled={form.formState.isSubmitted && !form.formState.isValid}
           >
@@ -344,5 +373,8 @@ export default function Register({ setAuthState }: AuthFormProps) {
         </form>
       </Form>
     </div>
+
+    //   </DialogContent>
+    // </Dialog>
   );
 }

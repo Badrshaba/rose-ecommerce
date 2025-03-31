@@ -9,11 +9,12 @@ import { Form, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
+import useLogin from "@/hooks/auth/use-login";
 
-export default function LoginForm() {
+export default function LoginForm({ setAuthState }: AuthFormProps) {
   // Translations
   const t = useTranslations();
-
+  const { isPending, error, login } = useLogin();
   // Form & Validation
   const Schema = z.object({
     email: z
@@ -33,7 +34,7 @@ export default function LoginForm() {
 
   // Functions
   const onSubmit: SubmitHandler<Inputs> = (values) => {
-    console.log(values);
+    login({ ...values });
   };
 
   return (
@@ -86,6 +87,9 @@ export default function LoginForm() {
             )}
           />
 
+          {/* Error Message */}
+          {error && <p className="text-red-500 text-sm">{error.message}</p>}
+
           {/* Forgot Password & Create Account */}
           <div className="flex justify-between items-center mt-10">
             {/* Create Account Text */}
@@ -96,24 +100,26 @@ export default function LoginForm() {
               <button
                 type="button"
                 className="text-custom-rose-900 text-sm font-semibold border-b-2 border-custom-rose-900 ms-1"
+                onClick={() => setAuthState("register")}
               >
                 {t("create-account")}
               </button>
             </span>
 
             {/* Forgot Password Button */}
-            <button
+            {/* <button
               type="button"
               className="text-custom-rose-900 text-sm font-semibold border-b-2 border-custom-rose-900 ms-1"
             >
               {t("forget-password")}
-            </button>
+            </button> */}
           </div>
 
           {/* Submit Button */}
           <Button
             type="submit"
             className="button-submit flex items-center justify-center w-full text-base h-[52px] font-medium mb-8 mt-10"
+            disabled={isPending}
           >
             {t("login")}
           </Button>

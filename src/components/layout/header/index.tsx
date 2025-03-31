@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { Heart, Search, User } from "lucide-react";
+import { Heart, User } from "lucide-react";
 import { PiBagBold } from "react-icons/pi";
 import { getServerSession } from "next-auth";
 import AuthDialog from "@/components/features/auth/auth-dialog";
 import MenuHeader from "./MenuHeader";
 import Navigation from "./Navigation";
+import SearchComponent from "./SearchComponent";
 
 export default async function Header() {
   // Get user session information
@@ -14,7 +15,7 @@ export default async function Header() {
   const userHasImage = session?.user?.image ? true : false;
 
   return (
-    <header className="flex justify-between items-center container my-4 sticky z-10 ">
+    <header className="flex justify-between items-center container my-4 sticky top-0 z-50 bg-white ">
       {/* Logo */}
       <Image src="/assets/images/Logo.png" alt="Logo" width={86} height={0} />
 
@@ -32,7 +33,7 @@ export default async function Header() {
           </div>
         )}
         {/* Search */}
-        <Search className="text-rose-500" />
+        <SearchComponent />
         {/* Favorites */}
         {session?.user && (
           <div className="relative">
