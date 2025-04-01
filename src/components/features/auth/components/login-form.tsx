@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import React from "react";
+import React, { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -10,11 +10,14 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import useLogin from "@/hooks/auth/use-login";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
 export default function LoginForm({ setAuthState }: AuthFormProps) {
   // Translations
   const t = useTranslations();
   const { isPending, error, login } = useLogin();
+  // State
+  const [showPassword, setShowPassword] = useState(false);
   // Form & Validation
   const Schema = z.object({
     email: z
@@ -72,14 +75,29 @@ export default function LoginForm({ setAuthState }: AuthFormProps) {
               <FormItem>
                 {/* Label For Better Accessibility */}
                 <Label className="sr-only">{t("password-label")}</Label>
-
-                {/* Input */}
-                <Input
-                  {...field}
-                  type="password"
-                  placeholder={t("password-placeholder")}
-                  className="input-custom shadow-custom-input !mt-6"
-                />
+                <div className=" relative">
+                  {/* Input */}
+                  <Input
+                    {...field}
+                    type={showPassword ? "text" : "password"}
+                    placeholder={t("password-placeholder")}
+                    className="input-custom shadow-custom-input !mt-6"
+                  />
+                  {/* Show Password Icon */}
+                  {showPassword ? (
+                    <FaRegEye
+                      role="button"
+                      onClick={() => setShowPassword(false)}
+                      className="text-2xl mx-3 cursor-pointer absolute rtl:left-0 ltr:right-0 md:top-[15px] top-[9px]"
+                    />
+                  ) : (
+                    <FaRegEyeSlash
+                      role="button"
+                      onClick={() => setShowPassword(true)}
+                      className="text-2xl mx-3 cursor-pointer absolute rtl:left-0 ltr:right-0 md:top-[15px] top-[9px]"
+                    />
+                  )}
+                </div>
 
                 {/* Feedback Message */}
                 <FormMessage />
@@ -119,9 +137,9 @@ export default function LoginForm({ setAuthState }: AuthFormProps) {
           <Button
             type="submit"
             className="button-submit flex items-center justify-center w-full text-base h-[52px] font-medium mb-8 mt-10"
-            disabled={isPending}
+            disabled={(form.formState.isSubmitted && !form.formState.isValid) || isPending}
           >
-            {t("login")}
+            {isPending ? <p>loading...</p> : t("login")}
           </Button>
         </form>
       </Form>

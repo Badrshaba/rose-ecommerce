@@ -53,26 +53,26 @@ export default function AboutUsHeaderPage() {
         {/* Text section */}
         <div className="about-us-info shrink xl:w-[30rem] lg:w-[25rem] w-[20rem]">
           {/* Start header */}
-          <h2 className="rtl:tracking-[0] rtl:text-xl font-bold uppercase font-roboto  text-lg leading-[30px] tracking-[4px]	text-custom-rose-900 pb-6 ">
+          <h2 className="rtl:tracking-[0] rtl:text-xl font-bold uppercase font-roboto  text-lg leading-[30px] tracking-[4px]	text-custom-rose-900 pb-6 text-center md:text-start ">
             {t("about-us")}
           </h2>
 
           {/* Best seller heading */}
           <div className="">
-            <h3 className="pb-2 text-custom-blue-900 font-bold leading-[40px] text-3xl font-inter ">
+            <h3 className="pb-2 text-custom-blue-900 font-bold leading-[40px] text-3xl font-inter text-center md:text-start  ">
               {t.rich("we-provide-best-and-quali-1", {
                 span: (v) => <span className="text-custom-rose-900">{v}</span>,
               })}
             </h3>
 
             {/* Best seller paragraph */}
-            <p className=" text-custom-muted pe-7 pb-6 font-normal text-base leading-[30px] ">
+            <p className=" text-custom-muted pe-7 pb-6 font-normal text-base leading-[30px] text-center md:text-start  ">
               {t("recusandae-tempora-aut-la-0")}
             </p>
           </div>
 
           {/* Discover more button */}
-          <div className="">
+          <div className=" flex md:block items-center justify-center ">
             <Button className="bg-custom-rose-900 h-[50px] font-medium text-base text-white rounded-md hover:bg-custom-rose-800 ps-5  py-[10px] ">
               {t("explore-more-0")}
               <FaArrowRight className="rtl:scale-x-[-1]" />
@@ -80,7 +80,7 @@ export default function AboutUsHeaderPage() {
           </div>
 
           {/* About list */}
-          <div className="flex gap-x-5 py-6 ">
+          <div className="flex flex-col md:flex-row md:gap-5 py-6 ">
             {/* The right section */}
             <div className="right-section">
               {/* First feat */}

@@ -24,7 +24,7 @@ export default function useLogin() {
       toast.success(t("login-successful"));
       setTimeout(() => {
         window.location.href = data?.url || "/";
-      }, 2000);
+      }, 500);
     },
   });
 

@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { IoStar } from "react-icons/io5";
 import { IoIosStarOutline } from "react-icons/io";
-import { BsHandbag } from "react-icons/bs";
 import { useTranslations } from "next-intl";
 import { TbEye, TbHeart } from "react-icons/tb";
+import AddProductComponent from "./AddProductComponent";
 
 export default function ProductCard({ product }: { product: Product }) {
   //  Translation
@@ -89,10 +89,7 @@ export default function ProductCard({ product }: { product: Product }) {
           </div>
         </div>
 
-        <div className="shrink-0 handbag-icon me-4 bg-custom-violet-900 cursor-pointer  rounded-full flex items-center justify-center w-10 h-10 ">
-          {/* The handbag icon */}
-          <BsHandbag className="  text-lg text-white font-black  " />
-        </div>
+        <AddProductComponent product={product} />
       </div>
     </>
   );

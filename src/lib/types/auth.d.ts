@@ -27,3 +27,13 @@ declare type VerifyOTPFiled = {
 };
 
 declare type VerifyOTPResponse = APIResponse<{ status: "Success" }>;
+
+declare type RegisterForm = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  rePassword: string;
+  phone: string;
+  gender: "male" | "female";
+};

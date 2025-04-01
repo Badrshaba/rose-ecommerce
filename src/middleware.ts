@@ -3,7 +3,7 @@ import createMiddleware from "next-intl/middleware";
 import { NextRequest } from "next/server";
 import { LOCALES, routing } from "./i18n/routing";
 
-const privatePages = ["/dashboard"];
+const privatePages = ["/dashboard", "/cart"];
 
 const handleI18nRouting = createMiddleware(routing);
 

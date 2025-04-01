@@ -8,6 +8,7 @@ import {
   CarouselPagination,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -67,12 +68,14 @@ export default function SpecialOffer() {
           </h2>
 
           {/* Shop button */}
-          <Button className="bg-custom-rose-900  font-medium text-base text-white rounded-md hover:bg-custom-rose-800 ps-5  py-[10px] ">
-            {t("shop-now")}
-            <span>
-              <Arrow />
-            </span>
-          </Button>
+          <Link href={"/all-products"}>
+            <Button className="bg-custom-rose-900  font-medium text-base text-white rounded-md hover:bg-custom-rose-800 ps-5  py-[10px] ">
+              {t("shop-now")}
+              <span>
+                <Arrow />
+              </span>
+            </Button>
+          </Link>
         </div>
       </div>
 
@@ -102,10 +105,12 @@ export default function SpecialOffer() {
                   <p className="mb-5 max-w-96">{t("special-offer-description")}</p>
 
                   {/* Shop button */}
-                  <Button className="bg-custom-rose-900 self-start mb-8 sm:mb-0  font-medium text-base text-white rounded-md hover:bg-custom-rose-800 ps-5  py-[10px] ">
-                    {t("shop-now")}
-                    <Arrow />
-                  </Button>
+                  <Link href={"/all-products"}>
+                    <Button className="bg-custom-rose-900 self-start mb-8 sm:mb-0  font-medium text-base text-white rounded-md hover:bg-custom-rose-800 ps-5  py-[10px] ">
+                      {t("shop-now")}
+                      <Arrow />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </CarouselItem>
@@ -139,9 +144,11 @@ export default function SpecialOffer() {
             </h2>
 
             {/* Shop button */}
-            <Button className="bg-custom-rose-900 mt-4  text-white rounded-full hover:bg-custom-rose-800  ">
-              {t("shop-now")}
-            </Button>
+            <Link href={"/all-products"}>
+              <Button className="bg-custom-rose-900 mt-4  text-white rounded-full hover:bg-custom-rose-800  ">
+                {t("shop-now")}
+              </Button>
+            </Link>
           </div>
         </div>
       ))}

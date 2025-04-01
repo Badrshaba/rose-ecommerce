@@ -19,9 +19,10 @@ import { Label } from "@/components/ui/label";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { useState } from "react";
+import useRegister from "@/hooks/auth/use-register";
 
 export default function Register({ setAuthState }: AuthFormProps) {
-  //   Traslation
+  // Translation
   const t = useTranslations();
   const locale = useLocale() as Locale;
 
@@ -30,7 +31,7 @@ export default function Register({ setAuthState }: AuthFormProps) {
     password: false,
     rePassword: false,
   });
-
+  const { isPending, data, error, register } = useRegister();
   // Register from schema
   const registerFormSchema = z
     .object({
@@ -109,9 +110,15 @@ export default function Register({ setAuthState }: AuthFormProps) {
 
   // Functions
   // Register submition function
-  const onSubmit: SubmitHandler<RegisterForm> = (values) => {
-    console.log("Register form values ==>", values);
+  const onSubmit: SubmitHandler<RegisterForm> = async (values) => {
+    register(values);
   };
+
+  if (data && data?.user.email === form.getValues().email) {
+    setTimeout(() => {
+      setAuthState("login");
+    }, 700);
+  }
 
   // Show and hide password and rePassword
   const handleShowPassword = (inputName: string) => {
@@ -241,12 +248,12 @@ export default function Register({ setAuthState }: AuthFormProps) {
                         passwordVisibility.password ? t("hide-password") : t("show-password")
                       }
                       onClick={() => handleShowPassword("password")}
-                      className="text-2xl mx-3 cursor-pointer absolute right-0 top-[15px]"
+                      className="text-2xl mx-3 cursor-pointer absolute rtl:left-0 ltr:right-0 md:top-[15px] top-[9px]"
                     />
                   ) : (
                     <FaRegEyeSlash
                       onClick={() => handleShowPassword("password")}
-                      className="text-2xl mx-3 cursor-pointer absolute right-0 top-[15px]"
+                      className="text-2xl mx-3 cursor-pointer absolute rtl:left-0 ltr:right-0 md:top-[15px] top-[9px]"
                     />
                   )}
                 </div>
@@ -279,12 +286,12 @@ export default function Register({ setAuthState }: AuthFormProps) {
                           : t("show-password-conformation")
                       }
                       onClick={() => handleShowPassword("rePassword")}
-                      className="text-2xl mx-3 cursor-pointer absolute right-0 top-[15px]"
+                      className="text-2xl mx-3 cursor-pointer absolute rtl:left-0 ltr:right-0 md:top-[15px] top-[9px]"
                     />
                   ) : (
                     <FaRegEyeSlash
                       onClick={() => handleShowPassword("rePassword")}
-                      className="text-2xl mx-3 cursor-pointer absolute right-0 top-[15px]"
+                      className="text-2xl mx-3 cursor-pointer absolute rtl:left-0 ltr:right-0 md:top-[15px] top-[9px]"
                     />
                   )}
                 </div>
@@ -306,7 +313,7 @@ export default function Register({ setAuthState }: AuthFormProps) {
                   value={field.value}
                   autoComplete="sex"
                 >
-                  <SelectTrigger className="p-4 w-1/4 h-max-md:h-[35px] h-[50px] rounded-full shadow-custom-box-shadow focus:ring-custom-rose-900 focus:ring-1 focus:ring-offset-0">
+                  <SelectTrigger className="p-4 md:w-1/4 w-1/3 md:h-[50px] h-[30px] rounded-full shadow-custom-box-shadow focus:ring-custom-rose-900 focus:ring-1 focus:ring-offset-0">
                     {/* Select header */}
                     <SelectValue placeholder={t("select-gender-placeholder")} />
                   </SelectTrigger>
@@ -324,7 +331,7 @@ export default function Register({ setAuthState }: AuthFormProps) {
             )}
           />
           {/* Switch to Login form */}
-          <p className="text-center text-custom-black h-max-md:py-4 py-8 font-inter text-sm tracking-[0]">
+          <p className="text-center text-custom-black md:py-8 py-2 font-inter text-sm tracking-[0]">
             {t.rich("already-have-an-account", {
               button: (v) => (
                 <button onClick={() => setAuthState("login")} className="text-custom-rose-900  ">
@@ -333,13 +340,15 @@ export default function Register({ setAuthState }: AuthFormProps) {
               ),
             })}
           </p>
+          {/* Error Message */}
+          {error && <p className="text-red-500 text-sm text-center">{error.message}</p>}
           {/* Submit */}
           <Button
             className="button-submit  flex items-center justify-center w-full text-base h-[52px] font-medium mb-5"
             type="submit"
-            disabled={form.formState.isSubmitted && !form.formState.isValid}
+            disabled={(form.formState.isSubmitted && !form.formState.isValid) || isPending}
           >
-            {t("create-an-account")}
+            {isPending ? <p>loading...</p> : t("create-an-account")}
           </Button>
         </form>
       </Form>

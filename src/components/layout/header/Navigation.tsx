@@ -1,14 +1,15 @@
 "use client";
 import { Link, usePathname } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Navigation({ col }: { col?: boolean }) {
   // Translation
   const t = useTranslations();
   const pathname = usePathname();
+  const locale = useLocale();
   return (
     <nav
-      className={`flex gap-5 ${col && "flex-col"} text-custom-blue-900 font-medium rtl:font-semibold text-base`}
+      className={`flex gap-5 ${col && "flex-col items-center"}  text-custom-blue-900 font-medium rtl:font-semibold text-base`}
     >
       {" "}
       <Link className={pathname === "/" ? "text-rose-500" : ""} href={"/"}>
@@ -26,6 +27,15 @@ export default function Navigation({ col }: { col?: boolean }) {
         {" "}
         {t("contact")}
       </Link>
+      {locale === "en" ? (
+        <Link locale="ar" className="text-rose-800 font-bold " href={pathname}>
+          عربي
+        </Link>
+      ) : (
+        <Link locale="en" className="text-rose-800 font-bold" href={pathname}>
+          English
+        </Link>
+      )}
     </nav>
   );
 }

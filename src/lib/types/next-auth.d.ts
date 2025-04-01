@@ -24,7 +24,10 @@ declare module "next-auth" {
    */
 
   // eslint-disable-next-line @typescript-eslint/no-empty-object-type
-  interface Session extends Omit<User, "token"> {}
+  interface Session extends Omit<User> {
+    token: string;
+    photo: string;
+  }
 }
 
 declare module "next-auth/jwt" {
