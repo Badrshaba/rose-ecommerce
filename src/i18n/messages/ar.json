@@ -185,5 +185,10 @@
   "add-to-cart-success": "أضف إلى نجاح العربة",
   "successful-update-quantity": "كمية التحديث الناجحة",
   "failed-update-quantity": "فاشلة تحديث كمية",
-  "you-must-login-first": "يجب عليك تسجيل الدخول أولاً"
+  "you-must-login-first": "يجب عليك تسجيل الدخول أولاً",
+  "an-email-been-sent-to-your-mail-address-email": "تم إرسال بريد إلكتروني إلى عنوان البريد الخاص بك {email}",
+  "your-order-is-confirmed": "تم تأكيد طلبك",
+  "okey": "حسنا",
+  "send-email": "إرسال البريد الإلكتروني",
+  "visit-us": "قم بزيارتنا"
 }

@@ -182,5 +182,10 @@
   "add-to-cart-success": "add to cart success",
   "successful-update-quantity": "successful update quantity",
   "failed-update-quantity": "failed update quantity",
-  "you-must-login-first": "You Must Login First"
+  "you-must-login-first": "You Must Login First",
+  "an-email-been-sent-to-your-mail-address-email": "An email been sent to your mail address {email}",
+  "your-order-is-confirmed": "Your Order Is Confirmed",
+  "okey": "Okey",
+  "send-email": "Send Email",
+  "visit-us": "Visit Us"
 }

@@ -36,13 +36,13 @@ export default function Information() {
     <div className="container">
       <ul className="bg-custom-rose-25 flex flex-col lg:flex-row justify-center items-center gap-4 p-10 rounded-2xl mt-20">
         {infoCards.map((card, index) => (
-          <li key={index} className="flex flex-col lg:flex-row items-center gap-4">
+          <li key={index} className="flex flex-col lg:flex-row  items-center gap-4">
             {/* Icon  */}
             <div className="img-container bg-custom-rose-900 p-4 rounded-full w-16 h-16 flex items-center justify-center">
               {card.icon}
             </div>
 
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col lg:items-start items-center">
               {/* Offer name */}
               <p className="text-custom-blue-900 font-bold text-xl">{card.name}</p>
 

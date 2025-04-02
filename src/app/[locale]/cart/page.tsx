@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-key */
-import Arrow from "@/components/common/arrow";
 import { getCart } from "@/lib/actions/cart-action";
 import { ArrowLeft } from "lucide-react";
 //import { useTranslations } from "next-intl";
@@ -9,6 +8,7 @@ import { Link } from "@/i18n/routing";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/auth";
 import Image from "next/image";
+import AlertDialogDemo from "@/components/common/alert-dialog";
 
 export default async function Cart() {
   // Translation
@@ -60,7 +60,7 @@ export default async function Cart() {
             </div>
             <div className="flex justify-between ">
               <p className="font-bold text-custom-blue-900 ">{t("discount")}:</p>
-              <p className="text-gray-500 ">${cart?.discount}</p>
+              <p className="text-gray-500 ">%{cart?.discount}</p>
             </div>
             <div className="flex justify-between ">
               <p className="font-bold text-custom-blue-900 ">{t("shipping")}:</p>
@@ -68,18 +68,17 @@ export default async function Cart() {
             </div>
             <div className="flex justify-between ">
               <p className="font-bold text-custom-blue-900 ">{t("taxes")}:</p>
-              <p className="text-gray-500">${cart?.totalPrice}</p>
+              <p className="text-gray-500">${cart?.totalPrice * 0.2}</p>
             </div>
           </div>
           <div className="flex justify-between -mt-5">
             <p className="font-bold text-custom-blue-900 ">{t("total")}</p>
-            <p className="font-bold text-custom-rose-900 ">${cart?.totalPriceAfterDiscount}</p>
+            <p className="font-bold text-custom-rose-900 ">
+              ${cart?.totalPrice * 0.2 + cart?.totalPriceAfterDiscount}
+            </p>
           </div>
-          <div className=" flex justify-end">
-            <button className="w-[165px] h-[50px] text-white text-base rounded-lg font-medium bg-custom-rose-900 text-center flex justify-center items-center gap-1 ">
-              {t("checkout-now")}
-              <Arrow />
-            </button>
+          <div className=" flex justify-center">
+            <AlertDialogDemo email={session?.user?.email as string} />
           </div>
         </div>
       </div>

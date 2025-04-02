@@ -23,7 +23,7 @@ export default function Navigation({ col }: { col?: boolean }) {
         {" "}
         {t("about")}
       </Link>
-      <Link className={pathname === "/contact" ? "text-rose-500" : ""} href={"/"}>
+      <Link className={pathname === "/contact" ? "text-rose-500" : ""} href={"/contact"}>
         {" "}
         {t("contact")}
       </Link>
