@@ -181,5 +181,6 @@
   "something-went-wrong-0": "something went wrong",
   "add-to-cart-success": "add to cart success",
   "successful-update-quantity": "successful update quantity",
-  "failed-update-quantity": "failed update quantity"
+  "failed-update-quantity": "failed update quantity",
+  "you-must-login-first": "You Must Login First"
 }
