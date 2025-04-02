@@ -14,7 +14,7 @@ export default function AddProductComponent({ product }: { product: Product }) {
   const { data } = useSession({ required: false, ...authOptions });
   function addToCart() {
     if (data) {
-      addCartItem({ token: data?.token as string, productId: product._id, quantity: 1 });
+      return addCartItem({ token: data?.token as string, productId: product._id, quantity: 1 });
     }
     toast.error(t("you-must-login-first"));
   }
