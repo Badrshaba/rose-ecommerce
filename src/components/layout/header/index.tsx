@@ -19,7 +19,9 @@ export default async function Header() {
   return (
     <header className="flex justify-between items-center container my-4 sticky top-0 z-50 bg-white ">
       {/* Logo */}
-      <Image src="/assets/images/Logo.png" alt="Logo" width={86} height={0} />
+      <Link href={"/"}>
+        <Image src="/assets/images/Logo.png" alt="Logo" width={86} height={0} />
+      </Link>
 
       {/* Navigation */}
       <div className="md:block hidden ">
