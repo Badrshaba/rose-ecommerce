@@ -187,5 +187,7 @@
   "your-order-is-confirmed": "Your Order Is Confirmed",
   "okey": "Okey",
   "send-email": "Send Email",
-  "visit-us": "Visit Us"
+  "visit-us": "Visit Us",
+  "delete-successfully": "Delete Successfully",
+  "delete-failed": "Delete Failed"
 }

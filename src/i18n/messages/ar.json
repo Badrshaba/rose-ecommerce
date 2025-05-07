@@ -190,5 +190,7 @@
   "your-order-is-confirmed": "تم تأكيد طلبك",
   "okey": "حسنا",
   "send-email": "إرسال البريد الإلكتروني",
-  "visit-us": "قم بزيارتنا"
+  "visit-us": "قم بزيارتنا",
+  "delete-successfully": "حذف بنجاح",
+  "delete-failed": "فشل حذف"
 }
