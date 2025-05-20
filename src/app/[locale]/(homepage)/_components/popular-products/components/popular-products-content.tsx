@@ -21,7 +21,7 @@ export default async function PopularProductsContent({
     <div className="grid grid-cols-12 gap-5 justify-center items-center">
       {/* No products */}
       {products?.length === 0 && (
-        <div className="w-full text-center min-h-56 flex items-center justify-center">
+        <div className="w-full text-center col-span-12 min-h-56 flex items-center justify-center">
           <h2 className="text-2xl font-bold text-custom-blue-900">{t("no-products-founds")}</h2>
         </div>
       )}

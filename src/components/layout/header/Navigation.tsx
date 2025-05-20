@@ -17,7 +17,7 @@ export default function Navigation({ col }: { col?: boolean }) {
       </Link>
       <Link className={pathname === "/all-products" ? "text-rose-500" : ""} href={"/all-products"}>
         {" "}
-        {t("all-products")}
+        {t("products")}
       </Link>
       <Link className={pathname === "/about" ? "text-rose-500" : ""} href={"/about"}>
         {" "}

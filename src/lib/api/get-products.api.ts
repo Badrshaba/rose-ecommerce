@@ -6,7 +6,6 @@ const baseUrl = process.env.API;
 
 export const getPopularProducts = async (endPoint: string) => {
   const response = await fetch(baseUrl + endPoint, {
-    cache: "no-store",
     method: "GET",
     headers: {
       ...JSON_HEADER,
