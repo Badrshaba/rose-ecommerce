@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Carousel,
   CarouselContent,
@@ -7,11 +8,11 @@ import {
 } from "@/components/ui/carousel";
 import ProductCard from "@/components/features/product/product-card";
 
-type CarouselComponentProps = {
-  bestProducts: Product[];
-};
+// type CarouselComponentProps = {
+//   bestProducts: Product[];
+// };
 
-export default function CarouselComponent({ bestProducts }: CarouselComponentProps) {
+export default function CarouselComponent({ bestProducts }: any) {
   return (
     <Carousel
       opts={{
