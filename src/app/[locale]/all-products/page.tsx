@@ -1,21 +1,47 @@
-import { Suspense } from "react";
-import PopularProductsContent from "../(homepage)/_components/popular-products/components/popular-products-content";
-import Square from "@/components/common/skeletons/square";
+import { getOccasions } from "@/lib/apis/get-occasions.api";
+import AllProducts from "./_components/product-item";
+import ProductSidebar from "./_components/product-sidebar";
+import { getCategories } from "@/lib/apis/category.api";
+import { getProducts } from "@/lib/api/get-products.api";
 
-export default function Page() {
+type ProductsProps = {
+  searchParams: Record<string, string>;
+};
+
+export default async function Products({ searchParams }: ProductsProps) {
+  // Variables
+  const [productsData, categoriesData, occasions] = await Promise.all([
+    getProducts(searchParams),
+    getCategories(),
+    getOccasions(),
+  ]);
+
+  const { products, metadata } = productsData;
+  const payload = categoriesData;
+  const occasionsPayload = occasions;
+
+  // Error handling
+  if ("error" in payload) {
+    throw new Error(payload?.error);
+  }
+  if ("error" in occasionsPayload) {
+    throw new Error(occasionsPayload?.error);
+  }
+  const categories = payload?.categories.slice(0, 4);
+
   return (
-    <Suspense
-      fallback={
-        <div className="flex flex-wrap justify-center items-center gap-5 my-10 ">
-          {" "}
-          <Square className="w-[15rem] h-[272px] rounded-[20px] bg-gray-200 mb-1" />{" "}
-          <Square className="w-[15rem] h-[272px] rounded-[20px] bg-gray-200 mb-1" />{" "}
-          <Square className="w-[15rem] h-[272px] rounded-[20px] bg-gray-200 mb-1" />{" "}
-          <Square className="w-[15rem] h-[272px] rounded-[20px] bg-gray-200 mb-1" />{" "}
+    <div className="container mx-auto px-4 py-8">
+      <div className="flex flex-col lg:flex-row gap-8">
+        {/* Sidebar section*/}
+        <div className="w-1/4 hidden lg:block ">
+          <ProductSidebar categories={categories} occasions={occasionsPayload.occasions} />
         </div>
-      }
-    >
-      <PopularProductsContent searchParams={{}} />
-    </Suspense>
+
+        {/* Main product section*/}
+        <div className="lg:w-3/4 w-full  mx-auto">
+          <AllProducts products={products} metadata={metadata} />
+        </div>
+      </div>
+    </div>
   );
 }
