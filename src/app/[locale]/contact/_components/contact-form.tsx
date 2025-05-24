@@ -73,7 +73,7 @@ export default function ContactForm() {
                 <Input
                   {...field}
                   placeholder={t("contact-name-placeholder")}
-                  className="text-custom-rose-900 placeholder:text-custom-rose-900 border-custom-rose-900 focus:border-custom-rose-900 focus:ring-custom-rose-900 focus:outline-none focus:ring-1"
+                  className="text-custom-rose-900 placeholder:text-custom-rose-900 border-custom-rose-900 focus:!border-custom-rose-900 focus:!ring-custom-rose-900 focus:!outline-none focus:!ring-2"
                 />
               </FormControl>
 
@@ -94,7 +94,7 @@ export default function ContactForm() {
                 <Input
                   {...field}
                   placeholder={t("contact-email-placeholder")}
-                  className="text-custom-rose-900 placeholder:text-custom-rose-900 border-custom-rose-900 focus:border-custom-rose-900 focus:ring-custom-rose-900 focus:outline-none focus:ring-1"
+                  className="text-custom-rose-900 placeholder:text-custom-rose-900 border-custom-rose-900 focus:!border-custom-rose-900 focus:!ring-custom-rose-900 focus:!outline-none focus:!ring-2"
                 />
               </FormControl>
 
@@ -115,7 +115,7 @@ export default function ContactForm() {
                 <Input
                   {...field}
                   placeholder={t("contact-phone-placeholder")}
-                  className="text-custom-rose-900 placeholder:text-custom-rose-900 border-custom-rose-900 focus:border-custom-rose-900 focus:ring-custom-rose-900 focus:outline-none focus:ring-1"
+                  className="text-custom-rose-900 placeholder:text-custom-rose-900 border-custom-rose-900 focus:!border-custom-rose-900 focus:!ring-custom-rose-900 focus:!outline-none focus:!ring-2"
                 />
               </FormControl>
 
@@ -137,8 +137,7 @@ export default function ContactForm() {
                   {...field}
                   placeholder={t("contact-message-placeholder")}
                   className="text-custom-rose-900 placeholder:text-custom-rose-900
-                   border-custom-rose-900 focus:border-custom-rose-900
-                    focus:ring-custom-rose-900 focus:outline-none focus:ring-1"
+                   border-custom-rose-900 focus:!border-custom-rose-900 focus:!ring-custom-rose-900 focus:!outline-none focus:!ring-2"
                 />
               </FormControl>
 

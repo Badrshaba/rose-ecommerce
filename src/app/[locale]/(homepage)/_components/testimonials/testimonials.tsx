@@ -126,7 +126,7 @@ export default function Testimonails() {
   }, [api]);
 
   return (
-    <section className="bg-birthday-image bg-cover bg-center my-20 pt-20 pb-32 hidden md:block">
+    <section className="bg-[url('/assets/images/testimonials/Birthday-background.png')] bg-cover bg-center my-20 pt-20 pb-32 hidden md:block">
       <div className="container">
         <Carousel
           setApi={setApi}

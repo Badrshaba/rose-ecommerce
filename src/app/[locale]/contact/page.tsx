@@ -20,7 +20,7 @@ export default async function Page() {
         </div>
 
         {/* Contact form */}
-        <div className="flex-grow min-w-96">
+        <div className="flex-grow min-w-72">
           <ContactForm />
         </div>
       </div>
