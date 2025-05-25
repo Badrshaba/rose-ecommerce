@@ -226,7 +226,6 @@
   "last-name-max": "اسم العائلة ماكس",
   "email-is-required": "البريد الإلكتروني مطلوب",
   "phone-is-required": "الهاتف مطلوب",
-  "phone-validation": "التحقق من صحة الهاتف",
   "phone-validation": "يرجى إدخال رقم هاتف صحيح",
   "user-registered-successfully": "سجل المستخدم بنجاح!",
   "on-sale": "خصم",
@@ -387,5 +386,7 @@
   "occasions": "المناسبات",
   "categories": "فئات",
   "products-0": "منتجات",
-  "preview-website": "معاينة موقع الويب"
+  "preview-website": "معاينة موقع الويب",
+  "add-to-cart-success": "  أضف إلى العربة بنجاج",
+  "something-went-wrong-0": "هناك خطب ما"
 }

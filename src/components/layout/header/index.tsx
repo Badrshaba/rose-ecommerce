@@ -9,6 +9,13 @@ import SearchComponent from "./SearchComponent";
 import { Link } from "@/i18n/routing";
 import { authOptions } from "@/auth";
 import { getCart } from "@/lib/actions/cart-action";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import Logout from "@/components/common/logout";
 
 export default async function Header() {
   // Get user session information
@@ -57,18 +64,31 @@ export default async function Header() {
         )}
 
         {/* User Profile: Only show if user is logged in */}
-        {session?.user &&
-          (session?.photo ? (
-            <Image
-              width={32}
-              height={32}
-              alt="User Image"
-              src={session?.photo as string}
-              className="rounded-full"
-            />
-          ) : (
-            <User className="text-rose-500 w-8 h-8" />
-          ))}
+
+        <DropdownMenu>
+          {/* Trigger */}
+          <DropdownMenuTrigger>
+            {session?.user &&
+              (session?.photo ? (
+                <Image
+                  width={32}
+                  height={32}
+                  alt="User Image"
+                  src={session?.photo as string}
+                  className="rounded-full"
+                />
+              ) : (
+                <User className="text-rose-500 w-8 h-8" />
+              ))}
+          </DropdownMenuTrigger>
+
+          {/* Content */}
+          <DropdownMenuContent>
+            <DropdownMenuItem className="cursor-pointer">
+              <Logout />
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
         <MenuHeader />
       </div>
     </header>

@@ -224,7 +224,6 @@
   "last-name-max": "last name max",
   "email-is-required": "email is required",
   "phone-is-required": "phone is required",
-  "phone-validation": "phone validation",
   "phone-validation": "Please enter a valid phone number",
   "password-changed-successfully": "password changed successfully",
   "user-registered-successfully": "User registered successfully!",
@@ -391,5 +390,7 @@
   "categories": "Categories",
   "occasions": "Occasions",
   "products-0": "Products",
-  "preview-website": "Preview website"
+  "preview-website": "Preview website",
+  "add-to-cart-success": "Add to cart success",
+  "something-went-wrong-0": "Something wrong"
 }
