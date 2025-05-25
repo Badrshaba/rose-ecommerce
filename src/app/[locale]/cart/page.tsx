@@ -76,9 +76,10 @@ export default async function Cart() {
             <p className="font-bold text-custom-blue-900 ">{t("total")}</p>
             <p className="font-bold text-custom-rose-900 ">
               $
-              {cart?.totalPrice * 0.2 + cart?.totalPriceAfterDiscount
+              {(cart?.totalPrice * 0.2 + cart?.totalPriceAfterDiscount
                 ? cart?.totalPriceAfterDiscount
-                : cart?.totalPrice}
+                : cart?.totalPrice
+              ).toFixed(2)}
             </p>
           </div>
           <div className=" flex justify-center">
